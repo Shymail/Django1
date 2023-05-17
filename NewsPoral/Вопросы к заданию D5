@@ -86,15 +86,15 @@ auth_rating.update_rating()
 
 9 Вывести username и рейтинг лучшего пользователя (применяя сортировку и возвращая поля первого объекта).
 
-Author.objects.order_by('rate')
+Author.objects.order_by('rating')
 
 10 Вывести дату добавления, username автора, рейтинг, заголовок и превью лучшей статьи, основываясь на лайках/дислайках к этой статье.
 
-Post.objects.order_by('rate').values('author__user__username')
+Post.objects.order_by('rating').values('author__user__username')
 
 11 Вывести все комментарии (дата, пользователь, рейтинг, текст) к этой статье.
 
-best = Post.objects.order_by('-rate').first()
+best = Post.objects.order_by('-rating').first()
 best
 comments = Comment.objects.all().filter(post_id=best.id)
 comments
@@ -102,5 +102,5 @@ comments
 for comment in comments:
     print(comment.time_in)
     print(User.objects.get(id=comment.user_id))
-    print(comment.rate)
+    print(comment.rating)
     print(comment.comment_text)
