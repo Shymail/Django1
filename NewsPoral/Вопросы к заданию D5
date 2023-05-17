@@ -24,7 +24,7 @@ post = Author.objects.get(pk=1)
 Post.objects.create(author=post, type='02', article_text='В мире произошло землетрясение', head_name='Шок-контент')
 
 post1 = Author.objects.get(pk=2)
-Post.objects.create(author=post, type='01', article_text='Сколько зарабатывает футболист', head_name='Неприлично много!')
+Post.objects.create(author=post, type='01', article_text='Сколько зарабатывает футболист', head_name='Большие деньги!')
 
 post = Author.objects.get(pk=1)
 Post.objects.create(author=post, type='01', article_text='Сколько часов необходимо для сна', head_name='Полезный сон')
